@@ -1,0 +1,129 @@
+
+table {
+  width: 100% !important;
+  margin: 0 auto;
+  background-color: #f5f5f5;
+}
+
+table th:first-child {
+  text-align: left !important;
+}
+
+table th {
+  text-align: right !important;
+}
+
+table td:first-child {
+  text-align: left !important;
+}
+
+table td {
+  text-align: right;
+}
+
+table td:last-child {
+  padding-right: 15px !important;
+}
+
+.searchBar {
+  border: 1px solid red;
+  margin: 5px auto;
+}
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+  .myContainer {
+    width: 50% !important;
+    margin: 10px auto;
+  }
+  
+}
+
+/* 
+    ##Device = Laptops, Desktops
+    ##Screen = B/w 1025px to 1280px
+  */
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .myContainer {
+    width: 50% !important;
+    margin: 10px auto;
+  }
+  
+}
+
+/* 
+    ##Device = Tablets, Ipads (portrait)
+    ##Screen = B/w 768px to 1024px
+  */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .myContainer {
+    width: 50% !important;
+    margin: 10px auto;
+  }
+  
+}
+
+/* 
+    ##Device = Tablets, Ipads (landscape)
+    ##Screen = B/w 768px to 1024px
+  */
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .myContainer {
+    width: 50% !important;
+    margin: 10px auto;
+  }
+  
+}
+
+/* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+    ##Screen = B/w 481px to 767px
+  */
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+  .myContainer {
+    width: 100% !important;
+  }
+
+}
+
+/* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+  .myContainer {
+    width: 100% !important;
+  }
+
+}
+
+.inputIcons i {
+  position: absolute;
+}
+
+.inputIcons {
+  margin-bottom: 10px;
+}
+
+.icon {
+  padding: 10px;
+  min-width: 40px;
+}
+
+.inputField {
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px !important;
+
+}

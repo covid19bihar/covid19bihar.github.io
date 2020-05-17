@@ -1,0 +1,64 @@
+.container {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    margin: 15px auto 10px;
+    text-align: center;
+}
+
+.h4 {
+    margin-bottom: 0;
+    font-size: 12px !important;
+}
+
+.h1 {
+    font-size: 28px;
+}
+
+.confirm {
+    color: #ff073a;
+}
+
+.active {
+    color:#007bff;
+}
+
+.recover {
+    color: #28a745;
+}
+
+.deaths {
+    color: #6c757d;
+}
+
+@media only screen and (min-width: 768px) {
+    /* tablets and desktop */
+
+}
+
+@media only screen and (max-width: 767px) {
+    /* phones */
+    .container {
+        width: 100%;
+    }
+
+    .confirm_name,
+    .active_name,
+    .recover_name,
+    .deaths_name {
+        font-size: 14px !important;
+    }
+
+    .h1 {
+        font-size: 24px !important;
+    }
+
+    .h4 {
+        font-size: 12px !important;
+    }
+  
+}
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+    /* portrait phones */
+}
