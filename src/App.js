@@ -1,8 +1,8 @@
 import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 import { Switch, Route, Redirect, Link } from "react-router-dom";
 import { Navbar, Nav } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
-import './App.css'
 import Home from "./components/Home/Home";
 import Faq from "./components/Home/Faq";
 import Prevention from "./components/Home/Prevention";
@@ -11,7 +11,7 @@ import Symptoms from "./components/Home/Symptoms";
 const App = () => {
   return (
     <>
-      <Navbar
+    <Navbar
         sticky="top"
         className="px-xl-5"
         collapseOnSelect

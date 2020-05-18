@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import About from "./About";
+import Footer from "../HeaderFooter/Footer";
 
 const Faq = () => {
   return (
@@ -147,7 +147,7 @@ const Faq = () => {
         </Row>
 
       </Container>
-      <About />
+      <Footer />
     </>
   );
 };

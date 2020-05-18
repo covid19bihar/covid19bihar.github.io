@@ -5,7 +5,7 @@ import { Container, Row, Col, Card, Jumbotron } from "react-bootstrap";
 import cough from "../../img/symptosm/cough.png";
 import breath from "../../img/symptosm/breath.png";
 import fever from "../../img/symptosm/fever.png";
-import About from "./About";
+import Footer from "../HeaderFooter/Footer";
 
 const Symptoms = () => {
   return (
@@ -66,7 +66,7 @@ const Symptoms = () => {
         </Col>
       </Row>
     </Container>
-    <About />
+    <Footer />
     </>
   );
 };

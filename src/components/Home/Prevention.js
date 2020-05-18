@@ -6,7 +6,7 @@ import keepDistance from "../../img/keepdistance.jpg";
 import hand from "../../img/handWash.jpg";
 import face from "../../img/avoidface.jpg";
 import smoke from "../../img/smokee.jpg";
-import About from "./About";
+import Footer from "../HeaderFooter/Footer";
 
 const Prevention = () => {
   return (
@@ -80,7 +80,7 @@ const Prevention = () => {
       </Row>
 
      </Container>
-    <About />
+    <Footer />
     </>
   );
 };

@@ -24,10 +24,10 @@ const LastFiveDays = ({data}) => {
       
     }
 
-    const lastFiveDate = date.slice(Math.max(date.length - 5, 0));
-    const lastFiveConfirm = confirm.slice(Math.max(confirm.length - 5, 0));
-    const lastFiveRecover = recover.slice(Math.max(recover.length - 5, 0));
-    const lastFiveDeaths = deaths.slice(Math.max(deaths.length - 5, 0));
+    const lastFiveDate = date.slice(Math.max(date.length - 10, 0));
+    const lastFiveConfirm = confirm.slice(Math.max(confirm.length - 10, 0));
+    const lastFiveRecover = recover.slice(Math.max(recover.length - 10, 0));
+    const lastFiveDeaths = deaths.slice(Math.max(deaths.length - 10, 0));
    
     
     return ( 

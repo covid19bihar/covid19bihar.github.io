@@ -1,30 +1,28 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
 
-
 const Last5Confirm = ({ confirm, recover, deaths, date }) => {
   const state = {
     labels: date,
-    datasets: [
+    datasets: React.useMemo(() => [
       {
         label: "Confirmed",
         backgroundColor: "rgb(255, 7, 58, 0.7)",
-
         data: confirm,
       },
       {
         label: "Recovered",
         backgroundColor: "rgb(40, 167, 69, 0.7)",
-
         data: recover,
       },
       {
         label: "Deaths",
         backgroundColor: "#6c757d",
-
         data: deaths,
-      },
-    ],
+      }
+    ], 
+    [confirm, recover, deaths]
+    ),
   };
 
   return (
@@ -35,12 +33,12 @@ const Last5Confirm = ({ confirm, recover, deaths, date }) => {
         options={{
           title: {
             display: true,
-            text: "Trend Last 5 Days",
+            text: "Trend Last 10 Days",
             fontSize: 20,
           },
           tooltips: {
             mode: "index",
-            intersect: false,
+            intersect: true,
           },
           legend: {
             display: true,
@@ -55,14 +53,14 @@ const Last5Confirm = ({ confirm, recover, deaths, date }) => {
                 display: true,
                 gridLines: {
                   display: true,
-                }
+                },
               },
             ],
             xAxes: [
               {
                 stacked: true,
                 gridLines: {
-                  display: true,
+                  display: false,
                 },
               },
             ],
