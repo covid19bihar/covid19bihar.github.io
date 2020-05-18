@@ -8,21 +8,12 @@ const Header = ({ data }) => {
         style={{
           marginTop: "10px",
           textAlign: "center",
+          fontWeight: 700,
         }}
       >
-        {/* 
-
-        <h1
-          className="text-info mb-0"
-          style={{ fontSize: "60px", fontFamily: "'Teko', sans-serif" }}
-        >
-          Covid19Bihar
-        </h1>
-        */}
-
         <div className="text-warning" style={{ fontSize: "14px" }}>
-          <span className="m-0">Last Update: </span>
-          <span className="">
+          <span>
+            Last Update:{" "}
             {isNaN(Date.parse(formatDate(data)))
               ? ""
               : formatDateAbsolute(data)}

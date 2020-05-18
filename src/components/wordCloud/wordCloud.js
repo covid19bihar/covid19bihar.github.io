@@ -1,19 +1,25 @@
 import React from "react";
 import ReactWordCloud from "react-wordcloud";
-
 import style from "./wordCloud.module.css";
 import cn from "classnames";
 
-const WordCloud = ({ word }) => {
+
+const WordCloud = ({ word, zone }) => {
+
+  const zoneColor = (district) => {
+    for(let i = 0; i < zone.length; i++) {
+      if(zone[i].district === district) return zone[i].zone;
+    }
+  }
+
   return (
     <div className={cn("container", style.word)}>
       <div className="card my-5 mx-1">
-        <div className="card-header">Word Cloud</div>
+        <div className="card-header">District Zone</div>
         <div className="card-body">
           <ReactWordCloud
             words={word}
             options={{
-            
               enableTooltip: true,
               deterministic: true,
               fontFamily: "impact",
@@ -21,18 +27,18 @@ const WordCloud = ({ word }) => {
               fontStyle: "normal",
               fontWeight: "bold",
               randomSeed: null,
-              rotations: 3,
-              rotationAngles: [0, -90],
+              rotations: 2,
+              rotationAngles: [-90, 0],
               scale: "sqrt",
               spiral: "archimedean",
               transitionDuration: 1000,
 
             }}
-
             callbacks={{
-              getWordTooltip: ({ value }) => `Confirmed Cases: ${value}`  
-            }}
-              />
+              getWordTooltip: ({ value }) => `Confirmed Cases: ${value}`,
+              getWordColor: ({text: district}) => zoneColor(district)
+            }} 
+            />
         </div>
       </div>
     </div>

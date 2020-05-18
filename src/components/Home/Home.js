@@ -85,6 +85,18 @@ const Home = () => {
     fetchData();
   }, []);
 
+
+const [zone, setZone] = useState({zone: [], loading: false});
+useEffect(() => {
+  const fetchData = async () => {
+    const zone = await axios("https://api.covid19india.org/zones.json");
+    const filterZone = zone.data.zones.filter(zone => zone.statecode === 'BR')
+    setZone({zone: filterZone, loading: true});
+  };  
+  fetchData();
+}, [])
+
+
   return distData.loading && dailyData.loading && data.loading ? (
     <React.Fragment>
       <Header data={data.lastupdatetime} />
@@ -92,7 +104,7 @@ const Home = () => {
       <TableData data={distData.dData} />
       <DailyChangeChart data={dailyData.daily} />
       <LastFiveDays data={dailyData.daily} />
-      <WordCloud word={distData.word} />
+      <WordCloud word={distData.word} zone={zone.zone}/>
       <Footer />
     </React.Fragment>
   ) : (
