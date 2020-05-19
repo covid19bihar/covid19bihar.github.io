@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Header from "../HeaderFooter/Header";
-import Counter from "../Banner/Counter";
+import Counter from "../Counter/Counter";
 import TableData from "../Table/TableData";
-import DailyChangeChart from "../chart/DailyChangeChart";
+import Chart from "../chart/chart";
 import WordCloud from "../wordCloud/wordCloud";
-import LastFiveDays from "../chart/LastFiveDays";
-import PreLoder from '../utils/PreLoder';
+import PreLoder from "../utils/PreLoder";
 import Footer from "../HeaderFooter/Footer";
 
 const Home = () => {
@@ -85,26 +84,25 @@ const Home = () => {
     fetchData();
   }, []);
 
-
-const [zone, setZone] = useState({zone: [], loading: false});
-useEffect(() => {
-  const fetchData = async () => {
-    const zone = await axios("https://api.covid19india.org/zones.json");
-    const filterZone = zone.data.zones.filter(zone => zone.statecode === 'BR')
-    setZone({zone: filterZone, loading: true});
-  };  
-  fetchData();
-}, [])
-
+  const [zone, setZone] = useState({ zone: [], loading: false });
+  useEffect(() => {
+    const fetchData = async () => {
+      const zone = await axios("https://api.covid19india.org/zones.json");
+      const filterZone = zone.data.zones.filter(
+        (zone) => zone.statecode === "BR"
+      );
+      setZone({ zone: filterZone, loading: true });
+    };
+    fetchData();
+  }, []);
 
   return distData.loading && dailyData.loading && data.loading ? (
     <React.Fragment>
       <Header data={data.lastupdatetime} />
       <Counter data={data} dailyData={dailyData.daily} />
       <TableData data={distData.dData} />
-      <DailyChangeChart data={dailyData.daily} />
-      <LastFiveDays data={dailyData.daily} />
-      <WordCloud word={distData.word} zone={zone.zone}/>
+      <Chart data={dailyData.daily} />
+      <WordCloud word={distData.word} zone={zone.zone} />
       <Footer />
     </React.Fragment>
   ) : (

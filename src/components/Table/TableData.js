@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { useTable, useSortBy, usePagination, useFilters } from "react-table";
 import cn from "classnames";
 import Recover from "./common/recover";
@@ -9,7 +9,7 @@ import Active from "./common/Active";
 import style from "./TableData.module.css";
 
 const TableData = ({ data }) => {
-  const columns = React.useMemo(
+  const columns = useMemo(
     () => [
       {
         Header: <span className="text-secondary">District</span>,
@@ -17,22 +17,22 @@ const TableData = ({ data }) => {
       },
       {
         Header: <span className="text-danger">Cnfrmd</span>,
-        id: "1",
+        id: 1,
         accessor: (d) => <Confirm data={d} />,
       },
       {
         Header: <span className="text-primary">Actv</span>,
-        id: "aff",
+        id: 2,
         accessor: (d) => <Active data={d} />,
       },
       {
         Header: <span className="text-success">Rcvrd</span>,
-        id: "2",
+        id: 3,
         accessor: (d) => <Recover data={d} />,
       },
       {
         Header: <span className="text-secondary">Deaths</span>,
-        id: 3,
+        id: 4,
         accessor: (d) => <Deaths data={d} />,
       },
     ],
@@ -173,16 +173,7 @@ const TableData = ({ data }) => {
               </li>
             </ul>
           </div>
-
-          {/* 
-            <span>
-              Page{" "}
-              <strong>
-                {pageIndex + 1} of {pageOptions.length}
-              </strong>{" "}
-            </span>
-            */}
-
+          
           <form className="form-group d-flex justify-content-between ml-2">
             <input
               className="form-control"

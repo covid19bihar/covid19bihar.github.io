@@ -1,6 +1,6 @@
 import React from "react";
 
-const Confirm = ({ data, delta }) => {
+const Confirm = ({ data }) => {
   return (
     <div>
       <span className="mr-2 text-danger">
