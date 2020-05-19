@@ -1,11 +1,13 @@
-# Covid19Bihar
+#Covid19Bihar
 
-<p style="text-align: center">
+<p text-align="center">
+<img src="https://github.com/covid19bihar/covid19bihar.github.io/blob/source/src/img/covid19tracker.png?raw=true">
 
-![alt text](https://github.com/covid19bihar/covid19bihar.github.io/blob/source/covid19bihar.png?raw=true "Covid-19 Bihar Tracker")
+<img style="margin-left: 8px" src="https://github.com/covid19bihar/covid19bihar.github.io/blob/source/src/img/covid19bihar.png?raw=true">
 
 </p>
-## Setup
+
+##Setup
 
 ```
 yarn add 
