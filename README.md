@@ -1,5 +1,5 @@
 # Covid19Bihar
-<p text-align="center">
+<p text-align="center" style="width: 400px, height: 500px">
 <img src="https://github.com/covid19bihar/covid19bihar.github.io/blob/source/src/img/covid19tracker.png?raw=true" alt="Covid-19 Bihar Tracker" />
 </p>
 
