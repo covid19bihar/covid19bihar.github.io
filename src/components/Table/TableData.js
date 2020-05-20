@@ -4,7 +4,7 @@ import cn from "classnames";
 import Recover from "./common/recover";
 import Deaths from "./common/deaths";
 import Confirm from "./common/confirm";
-import Active from "./common/Active";
+//import Active from "./common/Active";
 
 import style from "./TableData.module.css";
 
@@ -23,7 +23,7 @@ const TableData = ({ data }) => {
       {
         Header: <span className="text-primary">Actv</span>,
         id: 2,
-        accessor: (d) => <Active data={d} />,
+        accessor: 'active'
       },
       {
         Header: <span className="text-success">Rcvrd</span>,

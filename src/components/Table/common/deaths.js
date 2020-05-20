@@ -3,7 +3,7 @@ import React from "react";
 const Deaths = ({ data }) => {
   return (
     <div>
-      <span className="mr-2 text-danger">
+      <span className="mr-2 text-secondary">
         {data.delta.deceased ? (
           <span
             className="fa fa-arrow-up"

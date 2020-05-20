@@ -3,7 +3,7 @@ import React from "react";
 const Recover = ({ data }) => {
   return (
     <div>
-     <span className="mr-2 text-danger">
+     <span className="mr-2 text-success">
         {data.delta.recovered ? (
           <span
             className="fa fa-arrow-up"

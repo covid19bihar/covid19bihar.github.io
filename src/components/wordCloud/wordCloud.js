@@ -10,8 +10,8 @@ const WordCloud = ({ word, zone }) => {
   };
 
   return (
-    <div className={cn("myContainer")}>
-      <div className="card my-5 mx-1">
+    <div className={cn("container-fluid myContainer")}>
+      <div className="card mt-4 mb-3">
         <div className="card-header">Colorwise Zone</div>
         <div className="card-body">
           <ReactWordCloud

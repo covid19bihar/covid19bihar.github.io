@@ -28,7 +28,7 @@ const Header = ({ data, totalTest }) => {
             start={0}
             end={parseInt(totalTest)}
             duration={3}
-            delay={1}
+            delay={0.7}
             separator={","}
           />
         </div>

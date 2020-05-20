@@ -7,6 +7,7 @@ import Chart from "../chart/chart";
 import WordCloud from "../wordCloud/wordCloud";
 import PreLoder from "../utils/PreLoder";
 import Footer from "./Footer";
+import SomeInformation from "./SomeInformation";
 
 const Home = () => {
   const [data, setData] = useState({
@@ -125,6 +126,7 @@ const Home = () => {
       <TableData data={distData.dData} />
       <Chart data={dailyData.daily} />
       <WordCloud word={distData.word} zone={zone.zone} />
+      <SomeInformation data={data} totalTest={tested.test} />
       <Footer />
     </React.Fragment>
   ) : (
