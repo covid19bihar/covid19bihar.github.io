@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Header from "../HeaderFooter/Header";
+import LastUpdate from "./lastUpdate";
 import Counter from "../Counter/Counter";
 import TableData from "../Table/TableData";
 import Chart from "../chart/chart";
 import WordCloud from "../wordCloud/wordCloud";
 import PreLoder from "../utils/PreLoder";
-import Footer from "../HeaderFooter/Footer";
+import Footer from "./Footer";
 
 const Home = () => {
   const [data, setData] = useState({
@@ -84,6 +84,7 @@ const Home = () => {
     fetchData();
   }, []);
 
+  // Zone
   const [zone, setZone] = useState({ zone: [], loading: false });
   useEffect(() => {
     const fetchData = async () => {
@@ -96,9 +97,30 @@ const Home = () => {
     fetchData();
   }, []);
 
-  return distData.loading && dailyData.loading && data.loading ? (
+  const [tested, setTested] = useState({ test: 0, loading: false });
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const test = await axios(
+        "https://api.covid19india.org/state_test_data.json"
+      );
+      const filterTest = test.data.states_tested_data.filter(
+        (t) => t.state === "Bihar"
+      );
+      const biharTest = filterTest.slice(Math.max(filterTest.length - 1, 0));
+      const lastTested = biharTest[0].totaltested;
+
+      setTested({ test: lastTested, loading: true });
+    };
+    fetchData();
+  }, []);
+
+  return distData.loading &&
+    dailyData.loading &&
+    data.loading &&
+    tested.loading ? (
     <React.Fragment>
-      <Header data={data.lastupdatetime} />
+      <LastUpdate data={data.lastupdatetime} totalTest={tested.test} />
       <Counter data={data} dailyData={dailyData.daily} />
       <TableData data={distData.dData} />
       <Chart data={dailyData.daily} />

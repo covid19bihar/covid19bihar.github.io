@@ -39,7 +39,7 @@ const App = () => {
             </Nav.Link>
 
             <Nav.Link eventKey={5} as={Link} to="/prevention">
-              Prevention
+              Prevention Tips
             </Nav.Link>
 
             <Nav.Link eventKey={6} as={Link} to="/faq">

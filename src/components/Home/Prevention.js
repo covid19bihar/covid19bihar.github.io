@@ -6,7 +6,7 @@ import keepDistance from "../../img/keepdistance.jpg";
 import hand from "../../img/handWash.jpg";
 import face from "../../img/avoidface.jpg";
 import smoke from "../../img/smokee.jpg";
-import Footer from "../HeaderFooter/Footer";
+import Footer from "./Footer";
 
 const Prevention = () => {
   return (

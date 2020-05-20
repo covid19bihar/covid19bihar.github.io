@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import Footer from "../HeaderFooter/Footer";
+import Footer from "./Footer";
 
 const Faq = () => {
   return (
