@@ -3,9 +3,9 @@
   "name": "Covid-19 Tracker Bihar",
   "icons": [
     {
-      "src": "covid.png",
+      "src": "/covid-512.png",
       "type": "image/png",
-      "sizes": "180x180"
+      "sizes": "512x512"
     }
   ],
   "start_url": ".",

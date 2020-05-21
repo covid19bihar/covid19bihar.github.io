@@ -10,7 +10,7 @@
   <meta name="title" content="Coronavirus Track in Bihar - covid19bihar.github.io/" />
   <meta name="description" content="Track the spread of Coronavirus (COVID-19) in Bihar " />
   <meta name="keywords"
-    content="'corona tracker bihar', 'corona bihar', covid19bihar, coronainbihar, covidbuxar, covidpatna, patna, Tracker, district, DistrictWise, coronavirus, corona, covid, covid19, covid-19, covidbihar,bihar,virus" />
+    content="corona tracker bihar, corona bihar, covid19bihar, coronainbihar, covidbuxar, covidpatna, patna, Tracker, district, DistrictWise, coronavirus, corona, covid, covid19, covid-19, covidbihar,bihar,virus" />
   
     <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
@@ -62,12 +62,32 @@
     gtag('config', 'UA-164693247-1');
   </script>
 
+  
+
 </head>
 
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="root"></div>
+  <div id="root">
 
+
+  </div>
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('worker.js').then(function(registration) {
+            console.log('Worker registration successful', registration.scope);
+          }, function(err) {
+            console.log('Worker registration failed', err);
+          }).catch(function(err) {
+            console.log(err);
+          });
+        });
+      } else {
+        console.log('Service Worker is not supported by browser.');
+      }
+    </script>
 
 
   <!--

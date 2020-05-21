@@ -41,7 +41,7 @@ const SomeInformation = ({
                 <br></br>
                 <span className="mt-2">
                   For every 100 confirmed cases, {Math.round(activeRate)} are
-                  currently infected
+                  currently infected.
                 </span>
               </Card.Text>
             </Card.Body>
@@ -77,7 +77,7 @@ const SomeInformation = ({
 
           <Col sm={12} md={12}>
             <Card.Body className="alert-blue m-3  rounded-lg">
-              <Card.Title>Deaths Rate</Card.Title>
+              <Card.Title>Tests Per Million</Card.Title>
               <Card.Text>
                 <span className="h4"> &asymp;{testRate}</span>
                 <br></br>
