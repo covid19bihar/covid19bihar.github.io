@@ -2,6 +2,7 @@ import React from "react";
 import CountUp from "react-countup";
 import style from "./Counter.module.css";
 
+
 const Counter = ({ data }) => {
   return (
     <React.Fragment>

@@ -1,14 +1,18 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowUp  } from '@fortawesome/free-solid-svg-icons'
+
+
 
 const Confirm = ({ data }) => {
   return (
     <div>
       <span className="mr-2 text-danger">
         {data.delta.confirmed ? (
-          <i
-            className="fa fa-arrow-up"
-            style={{ fontSize: '12px', fontWeight: "600" }}
-          >{` ${data.delta.confirmed}`}</i>
+          <span style={{ fontWeight: 880, fontSize: 12 }}>
+          <FontAwesomeIcon icon={faArrowUp } /> {` ${data.delta.confirmed}`}
+          </span>
+        
         ) : (
           ""
         )}

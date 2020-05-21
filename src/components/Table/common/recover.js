@@ -1,21 +1,25 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowUp  } from '@fortawesome/free-solid-svg-icons'
 
-const Recover = ({ data }) => {
+
+
+const Confirm = ({ data }) => {
   return (
     <div>
-     <span className="mr-2 text-success">
+      <span className="mr-2 text-success">
         {data.delta.recovered ? (
-          <span
-            className="fa fa-arrow-up"
-            style={{ fontSize: "12px", fontWeight: "600" }}
-          >{` ${data.delta.recovered}`}</span>
+          <span style={{ fontWeight: 880, fontSize: 12 }}>
+          <FontAwesomeIcon icon={faArrowUp } /> {` ${data.delta.recovered}`}
+          </span>
+        
         ) : (
           ""
         )}
       </span>
-      <span>{data.recovered ? data.recovered : '-'}</span>
+      <span className="">{data.recovered ? data.recovered : '-'}</span>
     </div>
   );
 };
 
-export default Recover;
+export default Confirm;
