@@ -8,6 +8,7 @@ import WordCloud from "../wordCloud/wordCloud";
 import PreLoder from "../utils/PreLoder";
 import Footer from "./Footer";
 import SomeInformation from "./SomeInformation";
+import India from './india';
 
 const Home = () => {
   const [data, setData] = useState({
@@ -19,6 +20,17 @@ const Home = () => {
     deltaDeaths: 0,
     deltaRecovered: 0,
     lastupdatetime: "",
+
+    indConfirmed: 0,
+    indActive: 0,
+    indRecovered: 0,
+    indDeaths: 0,
+    indDeltaConfirmed: 0,
+    indDeltaRecovered: 0,
+    indDeltaDeaths: 0,
+
+    indTested: 0,
+    indLastUpdate: '',
     loading: false,
   });
 
@@ -29,6 +41,22 @@ const Home = () => {
       const biharData = data.data.statewise.filter((d) => d.state === "Bihar");
       const bihar = biharData[0];
 
+      
+      const indConfirmed = data.data.statewise.reduce((a, b) => +a +  +b.confirmed, 0)
+      const indActive = data.data.statewise.reduce((a, b) => +a + +b.active, 0)
+      const indRecovered = data.data.statewise.reduce((a, b) => +a + +b.recovered, 0)
+      const indDeaths = data.data.statewise.reduce((a, b) => +a + +b.deaths, 0)
+
+      const indDeltaConfirmed = data.data.statewise.reduce((a, b) => +a + +b.deltaconfirmed, 0);
+      const indDeltaRecovered = data.data.statewise.reduce((a, b) => +a + +b.deltarecovered, 0)
+      const indDeltaDeaths = data.data.statewise.reduce((a, b) => +a + +b.deltadeaths, 0)
+
+      const tested = data.data.tested.slice(Math.max(data.data.tested.length - 1, 0))
+      const indTested = tested[0].totalsamplestested;
+      const indLastUpdate = tested[0].updatetimestamp;
+
+  
+
       setData({
         confirm: bihar.confirmed,
         active: bihar.active,
@@ -38,6 +66,15 @@ const Home = () => {
         deltaRecovered: bihar.deltarecovered,
         deltaDeaths: bihar.deltadeaths,
         lastupdatetime: bihar.lastupdatedtime,
+        indConfirmed,
+        indActive,
+        indRecovered,
+        indDeaths,
+        indDeltaConfirmed,
+        indDeltaRecovered,
+        indDeltaDeaths,
+        indTested,
+        indLastUpdate,
         loading: true,
       });
     };
@@ -128,6 +165,7 @@ const Home = () => {
       <WordCloud word={distData.word} zone={zone.zone} />
       <SomeInformation data={data} totalTest={tested.test} />
       <Footer />
+    <India data={data} />
     </React.Fragment>
   ) : (
     <PreLoder />

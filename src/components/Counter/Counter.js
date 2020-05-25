@@ -1,7 +1,5 @@
 import React from "react";
-import CountUp from "react-countup";
 import style from "./Counter.module.css";
-
 
 const Counter = ({ data }) => {
   return (
@@ -11,24 +9,10 @@ const Counter = ({ data }) => {
           <div className={style.confirm}>
             <h5 className={style.confirm_name}>Confirmed</h5>
             <h4 className={style.h4}>
-              [ +
-              <CountUp
-                start={0}
-                end={parseInt(data.deltaConfirm)}
-                duration={3}
-                delay={1}
-                separator={","}
-              />{" "}
-              ]
+              [ +{parseInt(data.deltaConfirm).toLocaleString("en-IN")} ]
             </h4>
             <h1 className={style.h1}>
-              <CountUp
-                start={0}
-                end={parseInt(data.confirm)}
-                duration={2}
-                delay={1}
-                separator={","}
-              />
+              {parseInt(data.confirm).toLocaleString("en-IN")}
             </h1>
           </div>
         </div>
@@ -38,13 +22,7 @@ const Counter = ({ data }) => {
             <h5 className={style.active_name}>Active</h5>
             <h4 className={style.h4}>&nbsp;</h4>
             <h1 className={style.h1}>
-              <CountUp
-                start={0}
-                end={parseInt(data.active)}
-                duration={2}
-                delay={1}
-                separator={","}
-              />
+              {parseInt(data.active).toLocaleString("en-IN")}
             </h1>
           </div>
         </div>
@@ -53,24 +31,10 @@ const Counter = ({ data }) => {
           <div className={style.recover}>
             <h5 className={style.recover_name}>Recovered</h5>
             <h4 className={style.h4}>
-              [ +
-              <CountUp
-                start={0}
-                end={parseInt(data.deltaRecovered)}
-                duration={3}
-                delay={1.5}
-                separator={","}
-              />{" "}
-              ]
+              [ +{parseInt(data.deltaRecovered).toLocaleString("en-IN")} ]
             </h4>
             <h1 className={style.h1}>
-              <CountUp
-                start={0}
-                end={parseInt(data.recovered)}
-                duration={2}
-                delay={0.8}
-                separator={","}
-              />
+              {parseInt(data.recovered).toLocaleString("en-IN")}
             </h1>
           </div>
         </div>
@@ -79,24 +43,10 @@ const Counter = ({ data }) => {
           <div className={style.deaths}>
             <h5 className={style.deaths_name}>Deaths</h5>
             <h4 className={style.h4}>
-              [ +
-              <CountUp
-                start={0}
-                end={parseInt(data.deltaDeaths)}
-                duration={3}
-                delay={1.5}
-                separator={","}
-              />{" "}
-              ]
+              [ +{parseInt(data.deltaDeaths).toLocaleString("en-IN")} ]
             </h4>
             <h1 className={style.h1}>
-              <CountUp
-                start={0}
-                end={parseInt(data.deaths)}
-                duration={2}
-                delay={1.5}
-                separator={","}
-              />
+              {parseInt(data.deaths).toLocaleString("en-IN")}
             </h1>
           </div>
         </div>

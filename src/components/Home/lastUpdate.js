@@ -1,5 +1,4 @@
 import React from "react";
-import CountUp from "react-countup";
 import { formatDate, formatDateAbsolute } from "../utils/commonFunction";
 
 const Header = ({ data, totalTest }) => {
@@ -24,13 +23,8 @@ const Header = ({ data, totalTest }) => {
 
         <div style={{ color: "#6a66c1" }}>
           <span>Total Tested: </span>
-          <CountUp
-            start={0}
-            end={parseInt(totalTest)}
-            duration={3}
-            delay={0.7}
-            separator={","}
-          />
+         {parseInt(totalTest).toLocaleString("en-IN")}
+           
         </div>
       </div>
     </React.Fragment>
