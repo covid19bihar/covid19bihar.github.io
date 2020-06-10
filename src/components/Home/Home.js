@@ -4,7 +4,7 @@ import LastUpdate from "./lastUpdate";
 import Counter from "../Counter/Counter";
 import TableData from "../Table/TableData";
 import Chart from "../chart/chart";
-import WordCloud from "../wordCloud/wordCloud";
+//import WordCloud from "../wordCloud/wordCloud";
 import PreLoder from "../utils/PreLoder";
 import Footer from "./Footer";
 import SomeInformation from "./SomeInformation";
@@ -122,6 +122,7 @@ const Home = () => {
     fetchData();
   }, []);
 
+  /*
   // Zone
   const [zone, setZone] = useState({ zone: [], loading: false });
   useEffect(() => {
@@ -134,6 +135,8 @@ const Home = () => {
     };
     fetchData();
   }, []);
+
+  */
 
   const [tested, setTested] = useState({ test: 0, loading: false });
 
@@ -162,7 +165,7 @@ const Home = () => {
       <Counter data={data} dailyData={dailyData.daily} />
       <TableData data={distData.dData} />
       <Chart data={dailyData.daily} />
-      <WordCloud word={distData.word} zone={zone.zone} />
+      
       <SomeInformation data={data} totalTest={tested.test} />
       <Footer />
     <India data={data} />
