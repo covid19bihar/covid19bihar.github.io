@@ -11,8 +11,5 @@
 ```
 yarn add 
 Yarn start
-```
-
-# Maintainers
-[Abhishek Raj Ravi](https://github.com/arrbxr)
+`
 
